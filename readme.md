@@ -2,16 +2,11 @@
 
 I. Description
 ==============
-object oriented programming practice and tdd for development of application
-
+Selenium script in order to automate the search for a book and return its price
 
 II. File list
 ==============
 Gemfile  
 Gemfile.lock  
-person.rb  
-Rakefile  
+seleniumscript.rb    
 readme.md  
-spec/
-person_Spec.rb
-spec_helper.rb
