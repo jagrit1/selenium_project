@@ -1,0 +1,56 @@
+#Summary
+
+>> require 'selenium-webdriver'
+
+>> browser = Selenium::WebDriver.for :firefox
+
+>> browser.get "http://amazon.co.uk"
+
+>> element = browser.find_element id: "twotabsearchtextbox"
+
+>> element.send_keys "Eloquent Ruby"
+>> element.submit
+
+>> a = browser.find_element class: "a-color-price"
+>> a.text
+
+
+# THE BASICS
+​
+require 'selenium-webdriver'
+​
+# Open a Browser
+browser = Selenium::WebDriver.for :firefox
+​
+# Navigate
+browser.get "http://amazon.co.uk"
+browser.navigate.to "http://amazon.com"
+​
+# LOCATING ELEMENTS ON THE PAGE
+​
+a = browser.find_element name: "something"
+a = browser.find_element id: "someid"
+a = browser.find_element css: "h1 .foo" # This is awesome
+a = browser.find_element class: "foo"
+a = browser.find_element xpath: "//h2[@class='someclass']"
+a = browser.find_element tag_name: "tagname"
+​
+a = browser.find_elements tag_name: "tagname" # Returns an Array of Objects
+​
+​
+# METHODS ON ELEMENTS
+​
+a.location
+a.location_once_scrolled_into_view
+a.size
+a.displayed?
+a.text
+a.attribute "class"
+a.click
+a.send_keys "Eloquent Ruby"
+a.submit # Called on any element in a form will submit the form.
+a = browser.find_element class: "a-color-price"
+
+#RESULT
+puts a.text
+puts "The search has succeed"
